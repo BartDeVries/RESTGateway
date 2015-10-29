@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RESTGateway.Mvc")]
+[assembly: AssemblyTitle("RESTGateway.Mvc.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RESTGateway.Mvc")]
+[assembly: AssemblyProduct("RESTGateway.Mvc.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c8059b9e-fbb5-4317-bb7b-86e9a9d050d1")]
+[assembly: Guid("b039ae4e-cadd-449a-9925-6e2de17e0126")]
 
 // Version information for an assembly consists of the following four values:
 //
