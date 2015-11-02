@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "description": "RESTGateway.Core Class Library",
+  "authors": [ "Bart" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "RestSharp": "105.2.3"
+      }
+    }
+  }
+}

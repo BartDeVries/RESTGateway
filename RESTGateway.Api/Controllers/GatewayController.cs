@@ -1,11 +1,9 @@
-﻿using RESTGateway.Core;
+﻿using Microsoft.AspNet.Mvc;
+using RESTGateway.Core;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+
 
 namespace RESTGateway.Api.Controllers
 {
@@ -16,10 +14,14 @@ namespace RESTGateway.Api.Controllers
 
         public List<Field> Fields { get; set; }
     }
-    public class GatewayController : ApiController
+
+    [Route("gateway")]
+    public class GatewayController : Controller
     {
         // GET api/values/5
-        public dynamic Get(string requestId)
+
+        [HttpGet("{id}")]
+        public dynamic Get(string id)
         {
             var request = new GetRequest { Feed = "http://jsonplaceholder.typicode.com/posts", Fields=new List<Field>() };
             request.Fields.Add(new Field { Selector = "id" });
