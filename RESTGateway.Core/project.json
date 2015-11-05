@@ -8,8 +8,18 @@
   "frameworks": {
     "dnx451": {
       "dependencies": {
-        "RestSharp": "105.2.3"
+        "RestSharp": "105.2.3",
+        "WindowsAzure.Storage": "6.0.1-*",
+        "Microsoft.AspNet.Http": "1.0.0-beta8",
+        "Microsoft.Framework.Configuration": "1.0.0-beta8",
+        "Microsoft.Framework.DependencyInjection": "1.0.0-beta8"
+      },
+      "frameworkAssemblies": {
+        "System.ComponentModel.DataAnnotations": "4.0.0.0"
       }
     }
+  },
+  "dependencies": {
+    "Microsoft.Framework.OptionsModel": "1.0.0-beta8"
   }
 }

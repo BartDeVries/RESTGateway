@@ -1,0 +1,27 @@
+﻿<div>
+
+    <h1>List feeds</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="feed in feeds">
+                <td>
+                    <a href="/feed/edit/{{feed.Id}}" class="btn btn-default btn-xs">edit</a>
+                    <a href="/feed/delete/{{feed.Id}}" class="btn btn-danger btn-xs">delete</a>
+                </td>
+                <td>{{feed.Name}}</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/feed/add" class="btn btn-primary">Add New Feed</a>
+    </p>
+</div>
