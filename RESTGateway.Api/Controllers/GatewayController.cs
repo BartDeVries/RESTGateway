@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNet.Mvc;
+using Microsoft.Framework.OptionsModel;
 using RESTGateway.Core;
+using RESTGateway.Core.Managers;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -18,15 +20,30 @@ namespace RESTGateway.Api.Controllers
     [Route("gateway")]
     public class GatewayController : Controller
     {
+
+        public GatewayController(IOptions<AppSettings> optionsAccessor)
+        {
+            Settings = optionsAccessor.Value;
+        }
+
+        AppSettings Settings { get; }
+
         // GET api/values/5
 
         [HttpGet("{id}")]
         public dynamic Get(string id)
         {
-            var request = new GetRequest { Feed = "http://jsonplaceholder.typicode.com/posts", Fields=new List<Field>() };
-            request.Fields.Add(new Field { Selector = "id" });
-            request.Fields.Add(new Field { Selector = "title" });
+            FeedManager fm = new FeedManager(Settings);
+            var feed = fm.Get(id).Result;
 
+
+            var request = new GetRequest { Feed = feed.RemoteFeed, Fields=new List<Field>() };
+            string[] fields = feed.Fields.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var field in fields)
+            {
+                request.Fields.Add(new Field { Selector = field });
+            }
+            
             if (string.IsNullOrWhiteSpace(request.Feed))
                 throw new ApplicationException("feed param empty");
 

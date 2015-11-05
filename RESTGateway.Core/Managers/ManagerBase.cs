@@ -36,6 +36,14 @@ namespace RESTGateway.Core.Managers
         }
 
 
+        public async Task<TTableEntity> Get(string rowKey)
+        {
+            var request = GetAll(rowKey: rowKey);
+            //request.Wait();
+            return request.Result.SingleOrDefault();
+        }
+
+
         public async Task<TTableEntity> Get(string partitionKey, string rowKey)
         {
             // Create a retrieve operation that takes a customer entity.

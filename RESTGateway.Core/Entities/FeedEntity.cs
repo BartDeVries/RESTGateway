@@ -17,6 +17,10 @@ namespace RESTGateway.Core.Entities
 
         [Required]
         public string Name { get; set; }
+        
+        public string RemoteFeed { get; set; }
+
+        public string Fields { get; set; }
 
     }
 }
