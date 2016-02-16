@@ -2,7 +2,7 @@
     'use strict';
 
     config.$inject = ['$routeProvider', '$locationProvider'];
-
+    angular.module('RESTGatewayApp', ['angular-loading-bar'])
     angular.module('RESTGatewayApp', [
         'ngRoute', 'feedService'
     ]).config(config);
